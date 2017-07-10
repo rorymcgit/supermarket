@@ -3,6 +3,7 @@ import org.xml.sax.Attributes;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -18,9 +19,10 @@ public class TestBasket {
 
   @Test
   public void testAdd() {
-    basket.add("Beans", 1.0);
+    // NOW IMPLEMENT A MOCK ITEM OBJECT
+    basket.add("Beans", 0.5);
     Map testItems = basket.getItems();
-    assertEquals(testItems.containsKey("Beans"), true);
+    assertTrue(testItems.containsKey("Beans"));
   }
 
 }
