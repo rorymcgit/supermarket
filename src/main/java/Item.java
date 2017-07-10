@@ -1,8 +1,8 @@
 public class Item {
 
-  double quantity;
-  String name;
-  double price;
+  private double quantity;
+  private String name;
+  private double price;
 
   public Item(double quantity, String name, double price) {
     this.quantity = quantity;
@@ -10,7 +10,15 @@ public class Item {
     this.price = price;
   }
 
-  public double calculatePrice() {
+  public double getPrice() {
     return quantity * price;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public double getQuantity() {
+    return quantity;
   }
 }

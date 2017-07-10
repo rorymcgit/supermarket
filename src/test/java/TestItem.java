@@ -10,33 +10,28 @@ public class TestItem {
 
   @Before
   public void createItemInstance() {
-    testItem = new Item(1.0, "Can of Beans", 0.5);
+    testItem = new Item(1.0, "Beans", 0.5);
   }
 
   @Test
   public void testItemName() {
-    assertEquals(testItem.name, "Can of Beans");
+    assertEquals(testItem.getName(), "Beans");
   }
 
   @Test
-  public void testItemPrice() {
-    assertEquals(testItem.price, 0.5);
+  public void testItemQuantity() {
+    assertEquals(testItem.getQuantity(), 1.0);
   }
 
   @Test
-  public void testItemAmount() {
-    assertEquals(testItem.quantity, 1.0);
+  public void testGetPrice() {
+    assertEquals(testItem.getPrice(), 0.5);
   }
 
   @Test
-  public void testCalculatePrice() {
-    assertEquals(testItem.calculatePrice(), 0.5);
-  }
-
-  @Test
-  public void testCalculatePriceForFractionalQuantity() {
-    Item AnotherTestItem = new Item(0.5, "Kilogram of Oranges", 2.0);
-    assertEquals(AnotherTestItem.calculatePrice(), 1.0);
+  public void testGetPriceForFractionalQuantity() {
+    Item AnotherTestItem = new Item(0.5, "Oranges/kg", 2.0);
+    assertEquals(AnotherTestItem.getPrice(), 1.0);
   }
 
 }
