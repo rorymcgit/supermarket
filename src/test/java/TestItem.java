@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class TestItem {
 
   private Item testItem;
-  private final double deltaTolerance = 0.001;
+  private final double comparisonTolerance = 0.005;
 
   @Before
   public void createItemInstance() {
@@ -21,18 +21,18 @@ public class TestItem {
 
   @Test
   public void testItemQuantity() {
-    assertEquals(testItem.getQuantity(), 1.0, deltaTolerance);
+    assertEquals(testItem.getQuantity(), 1.0, comparisonTolerance);
   }
 
   @Test
   public void testGetPrice() {
-    assertEquals(testItem.getPrice(), 0.5, deltaTolerance);
+    assertEquals(testItem.getPrice(), 0.5, comparisonTolerance);
   }
 
   @Test
   public void testGetPriceForFractionalQuantity() {
     Item AnotherTestItem = new Item(0.5, "Oranges/kg", 2.0);
-    assertEquals(AnotherTestItem.getPrice(), 1.0, deltaTolerance);
+    assertEquals(AnotherTestItem.getPrice(), 1.0, comparisonTolerance);
   }
 
 }
