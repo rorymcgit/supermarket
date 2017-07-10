@@ -10,7 +10,7 @@ public class TestItem {
 
   @Before
   public void createItemInstance() {
-    testItem = new Item("Beans", 0.5);
+    testItem = new Item(1.0, "Beans", 0.5);
   }
 
   @Test
@@ -21,6 +21,11 @@ public class TestItem {
   @Test
   public void testItemPrice() {
     assertEquals(testItem.price, 0.5);
+  }
+
+  @Test
+  public void testItemAmount() {
+    assertEquals(testItem.quantity, 1.0);
   }
 
 }
