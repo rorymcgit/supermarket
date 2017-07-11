@@ -10,15 +10,15 @@ public class Item {
     this.price = price;
   }
 
-  public double getPrice() {
-    return quantity * price;
+  public double getQuantity() {
+    return quantity;
   }
 
   public String getName() {
     return name;
   }
 
-  public double getQuantity() {
-    return quantity;
+  public double getPrice() {
+    return quantity * price;
   }
 }

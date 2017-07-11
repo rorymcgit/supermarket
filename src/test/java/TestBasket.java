@@ -9,16 +9,17 @@ import java.util.HashMap;
 public class TestBasket {
 
   private Basket basket;
+  private Item testBeansItem;
 
   @Before
   public void createBasketInstance() {
     basket = new Basket();
+    testBeansItem = new Item(1.0, "Beans", 0.5);
   }
 
   @Test
   public void testAdd() {
-    // NOW IMPLEMENT A MOCK ITEM OBJECT
-    basket.add("Beans", 0.5);
+    basket.add(testBeansItem.getName(), testBeansItem.getPrice());
     Map testItems = basket.getItems();
     assertTrue(testItems.containsKey("Beans"));
   }
